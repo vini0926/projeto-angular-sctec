@@ -6,6 +6,11 @@
     "analytics": "0457c3ff-e1ee-447f-8c06-dd55fcc0b997"
   },
   "newProjectRoot": "projects",
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  },
   "projects": {
     "projeto-angular-sctec": {
       "projectType": "application",
@@ -19,15 +24,12 @@
           "options": {
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": [
-              "src/styles.css"
-            ]
+            "assets": [{ "glob": "**/*", "input": "public" }],
+            "styles": ["src/styles.scss"],
+            "inlineStyleLanguage": "scss",
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/styles"]
+            }
           },
           "configurations": {
             "production": {
